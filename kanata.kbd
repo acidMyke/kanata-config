@@ -5,20 +5,53 @@
 (defvar
   tap-time 150
   hold-time 200
+  in-chord-time 50
 )
 
 (defalias
   escctrl (tap-hold 100 100 esc lctrl)
-  a (tap-hold $tap-time $hold-time a lmet)
-  s (tap-hold $tap-time $hold-time s lalt)
-  d (tap-hold $tap-time $hold-time d lsft)
-  f (tap-hold $tap-time $hold-time f lctl)
-  g (tap-hold $tap-time $hold-time g lsft)
-  h (tap-hold $tap-time $hold-time h rsft)
-  j (tap-hold $tap-time $hold-time j rctl)
-  k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; rmet)
+  mt_a (tap-hold $tap-time $hold-time a lmet)
+  mt_s (tap-hold $tap-time $hold-time s lalt)
+  mt_d (tap-hold $tap-time $hold-time d lsft)
+  mt_f (tap-hold $tap-time $hold-time f lctl)
+  mt_g (tap-hold $tap-time $hold-time g lsft)
+  mt_h (tap-hold $tap-time $hold-time h rsft)
+  mt_j (tap-hold $tap-time $hold-time j rctl)
+  mt_k (tap-hold $tap-time $hold-time k rsft)
+  mt_l (tap-hold $tap-time $hold-time l ralt)
+  mt_; (tap-hold $tap-time $hold-time ; rmet)
+
+  ch_s (chord l_hmr_fn s)
+  ch_d (chord l_hmr_fn d)
+  ch_f (chord l_hmr_fn f)
+  ch_g (chord l_hmr_fn g)
+  ch_h (chord r_hmr_fn h)
+  ch_j (chord r_hmr_fn j)
+  ch_k (chord r_hmr_fn k)
+  ch_l (chord r_hmr_fn l)
+)
+
+(defchords l_hmr_fn $in-chord-time
+  (s      ) @mt_s
+  (  d    ) @mt_d
+  (    f  ) @mt_f
+  (      g) @mt_g
+  (  d f  ) tab
+  (s d f  ) enter
+  (    f g) bspc
+  (  d f g) del
+)
+
+
+(defchords r_hmr_fn $in-chord-time
+  (h      ) @mt_h
+  (  j    ) @mt_j
+  (    k  ) @mt_k
+  (      l) @mt_l
+  (  j k  ) tab
+  (h j k  ) enter
+  (    k l) bspc
+  (  j k l) del
 )
 
 (defsrc
@@ -26,5 +59,5 @@
 )
 
 (deflayer base
-  @escctrl @a @s @d @f @g @h @j @k @l @;
+  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
 )
