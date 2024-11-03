@@ -29,6 +29,11 @@
   ch_j (chord r_hmr_fn j)
   ch_k (chord r_hmr_fn k)
   ch_l (chord r_hmr_fn l)
+
+  ch_x (chord clippy x)
+  ch_c (chord clippy c)
+  ch_v (chord clippy v)
+  ch_b (chord clippy b)
 )
 
 (defchords l_hmr_fn $in-chord-time
@@ -54,10 +59,23 @@
   (  j k l) del
 )
 
+(defchords clippy $in-chord-time
+  (x      ) x
+  (  c    ) c
+  (    v  ) v
+  (      b) b
+  (    v b) C-v
+  (  c v b) C-S-v
+  (  c v  ) C-c
+  (x c    ) C-x
+)
+
 (defsrc
   caps a s d f g h j k l ;
+  x c v b
 )
 
 (deflayer base
-  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
+  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_;
+  @ch_x @ch_c @ch_v @ch_b
 )
