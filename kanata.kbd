@@ -13,6 +13,8 @@
   s (tap-hold $tap-time $hold-time s lalt)
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f lctl)
+  g (tap-hold $tap-time $hold-time g lsft)
+  h (tap-hold $tap-time $hold-time h rsft)
   j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
@@ -20,9 +22,9 @@
 )
 
 (defsrc
-  caps a s d f j k l ;
+  caps a s d f g h j k l ;
 )
 
 (deflayer base
-  @escctrl @a @s @d @f @j @k @l @;
+  @escctrl @a @s @d @f @g @h @j @k @l @;
 )
