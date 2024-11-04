@@ -5,7 +5,7 @@
 (defvar
   tap-time 150
   hold-time 200
-  in-chord-time 50
+  in-chord-time 100
 )
 
 (defalias
@@ -47,16 +47,15 @@
   (  d f g) del
 )
 
-
 (defchords r_hmr_fn $in-chord-time
   (h      ) @mt_h
   (  j    ) @mt_j
   (    k  ) @mt_k
   (      l) @mt_l
   (  j k  ) tab
-  (h j k  ) enter
-  (    k l) bspc
-  (  j k l) del
+  (  j k l) enter
+  (h j    ) bspc
+  (h j k  ) del
 )
 
 (defchords clippy $in-chord-time
@@ -76,6 +75,6 @@
 )
 
 (deflayer base
-  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_;
+  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
   @ch_x @ch_c @ch_v @ch_b
 )
