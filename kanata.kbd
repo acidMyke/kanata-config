@@ -30,6 +30,9 @@
   ch_k (chord r_hmr_fn k)
   ch_l (chord r_hmr_fn l)
 
+  capskey (chord shiftedcaps caps)
+  sftkey (chord shiftedcaps lsft)
+
   ch_x (chord clippy x)
   ch_c (chord clippy c)
   ch_v (chord clippy v)
@@ -58,6 +61,12 @@
   (h j k  ) del
 )
 
+(defchords shiftedcaps $in-chord-time
+  (caps     ) @escctrl
+  (     lsft) lsft
+  (caps lsft) caps
+)
+
 (defchords clippy $in-chord-time
   (x      ) x
   (  c    ) c
@@ -71,10 +80,10 @@
 
 (defsrc
   caps a s d f g h j k l ;
-  x c v b
+  lsft x c v b
 )
 
 (deflayer base
-  @escctrl @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
-  @ch_x @ch_c @ch_v @ch_b
+  @capskey @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
+  @sftkey @ch_x @ch_c @ch_v @ch_b
 )
