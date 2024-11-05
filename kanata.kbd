@@ -61,7 +61,7 @@
   (h j k  ) del
 )
 
-(defchords shiftedcaps $in-chord-time
+(defchords shiftedcaps 50
   (caps     ) @escctrl
   (     lsft) lsft
   (caps lsft) caps
