@@ -51,7 +51,6 @@
   (  e   f  ) tab
   (w e   f  ) enter
   (    r   g) bspc
-  (  e r   g) del
 )
 
 (defchords r_hmr_fn $in-chord-time
@@ -63,7 +62,6 @@
   (  i   j  ) tab
   (o i   j  ) enter
   (    u   h) bspc
-  (  i u   h) del
 )
 
 (defchords shiftedcaps $in-chord-time
