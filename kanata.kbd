@@ -79,11 +79,38 @@
 )
 
 (defsrc
-  caps a s d f g h j k l ;
-  lsft x c v b
+  grv      1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab      q      w      e      r      t      y      u      i      o      p      [      ]      \
+  caps     a      s      d      f      g      h      j      k      l      ;      '      ret
+  lsft     z      x      c      v      b      n      m      ,      .      /      rsft
+  lctl     lmet   lalt                 spc                  ralt   rmet   rctl
 )
 
-(deflayer base
-  @capskey @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_; 
-  @sftkey @ch_x @ch_c @ch_v @ch_b
+
+#| template
+(deflayer name 
+  _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
+  _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
+  _        _      _      _      _      _      _      _      _      _      _      _      _ ;; (13 keys)
+  _        _      _      _      _      _      _      _      _      _      _      _ ;; (12 keys)
+  _        _      _                    _                    _      _      _ ;; (7 keys)
 )
+|#
+
+
+(deflayer base
+  _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
+  _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
+  @capskey @mt_a  @ch_s  @ch_d  @ch_f  @ch_g  @ch_h  @ch_j  @ch_k  @ch_l  @mt_;  _      _ ;; (13 keys)
+  @sftkey  _      @ch_x  @ch_c  @ch_v  @ch_b  _      _      _      _      _      _ ;; (12 keys)
+  _        _      _                    _                    _      _      _ ;; (7 keys)
+)
+
+;; (deflayer base
+;;   @capskey  @mt_a @ch_s @ch_d @ch_f @ch_g @ch_h @ch_j @ch_k @ch_l @mt_;
+;;   @sftkey @ch_x @ch_c @ch_v @ch_b
+;; )
+
+;; (deflayer hmr_num
+;;   _
+;; )
