@@ -11,24 +11,24 @@
 (defalias
   escctrl (tap-hold 100 100 esc lctrl)
   mt_a (tap-hold $tap-time $hold-time a lmet)
-  mt_s (tap-hold $tap-time $hold-time s lalt)
-  mt_d (tap-hold $tap-time $hold-time d lsft)
+  mt_w (tap-hold $tap-time $hold-time w lalt)
+  mt_e (tap-hold $tap-time $hold-time e lsft)
   mt_f (tap-hold $tap-time $hold-time f lctl)
   mt_g (tap-hold $tap-time $hold-time g lsft)
   mt_h (tap-hold $tap-time $hold-time h rsft)
   mt_j (tap-hold $tap-time $hold-time j rctl)
-  mt_k (tap-hold $tap-time $hold-time k rsft)
-  mt_l (tap-hold $tap-time $hold-time l ralt)
+  mt_i (tap-hold $tap-time $hold-time i rsft)
+  mt_o (tap-hold $tap-time $hold-time o ralt)
   mt_; (tap-hold $tap-time $hold-time ; rmet)
 
-  ch_s (chord l_hmr_fn s)
-  ch_d (chord l_hmr_fn d)
+  ch_w (chord l_hmr_fn w)
+  ch_e (chord l_hmr_fn e)
   ch_f (chord l_hmr_fn f)
   ch_g (chord l_hmr_fn g)
   ch_h (chord r_hmr_fn h)
   ch_j (chord r_hmr_fn j)
-  ch_k (chord r_hmr_fn k)
-  ch_l (chord r_hmr_fn l)
+  ch_i (chord r_hmr_fn i)
+  ch_o (chord r_hmr_fn o)
 
   capskey (chord shiftedcaps caps)
   sftkey (chord shiftedcaps lsft)
@@ -40,25 +40,25 @@
 )
 
 (defchords l_hmr_fn $in-chord-time
-  (s      ) @mt_s
-  (  d    ) @mt_d
+  (w      ) @mt_w
+  (  e    ) @mt_e
   (    f  ) @mt_f
   (      g) @mt_g
-  (  d f  ) tab
-  (s d f  ) enter
+  (  e f  ) tab
+  (w e f  ) enter
   (    f g) bspc
-  (  d f g) del
+  (  e f g) del
 )
 
 (defchords r_hmr_fn $in-chord-time
   (h      ) @mt_h
   (  j    ) @mt_j
-  (    k  ) @mt_k
-  (      l) @mt_l
-  (  j k  ) tab
-  (  j k l) enter
+  (    i  ) @mt_i
+  (      o) @mt_o
+  (  j i  ) tab
+  (  j i o) enter
   (h j    ) bspc
-  (h j k  ) del
+  (h j i  ) del
 )
 
 (defchords shiftedcaps $in-chord-time
@@ -100,8 +100,8 @@
 
 (deflayer base
   _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
-  _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
-  @capskey @mt_a  @ch_s  @ch_d  @ch_f  @ch_g  @ch_h  @ch_j  @ch_k  @ch_l  @mt_;  _      _ ;; (13 keys)
+  _        _      @ch_w  @ch_e  _      _      _      _      @ch_i  @ch_o  _      _      _      _ ;; (14 keys)
+  @capskey @mt_a  _      _      @ch_f  @ch_g  @ch_h  @ch_j  _      _      @mt_;  _      _ ;; (13 keys)
   @sftkey  _      @ch_x  @ch_c  @ch_v  @ch_b  _      _      _      _      _      _ ;; (12 keys)
   _        _      _                    _                    _      _      _ ;; (7 keys)
 )
