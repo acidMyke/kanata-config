@@ -21,6 +21,15 @@
   mt_o (tap-hold $tap-time $hold-time o ralt)
   mt_; (tap-hold $tap-time $hold-time ; rmet)
 
+  s_fn1 (layer-while-held __fn1)
+  s_fn2 (layer-while-held __fn2)
+
+  lt_c (tap-hold $tap-time $hold-time c @s_fn1)
+  lt_v (tap-hold $tap-time $hold-time v @s_fn2)
+  ;; lt_b (tap-hold $tap-time $hold-time c @s_fn1)
+  lt_n (tap-hold $tap-time $hold-time n @s_fn2)
+  lt_m (tap-hold $tap-time $hold-time m @s_fn1)
+
   ch_w (chord l_hmr_fn w)
   ch_e (chord l_hmr_fn e)
   ch_r (chord l_hmr_fn r)
@@ -72,8 +81,8 @@
 
 (defchords clippy $in-chord-time
   (x      ) x
-  (  c    ) c
-  (    v  ) v
+  (  c    ) @lt_c
+  (    v  ) @lt_v
   (      b) b
   (    v b) C-v
   (  c v b) C-S-v
@@ -105,7 +114,23 @@
   _        _      _      _      _      _      _      _      _      _      _      _      _      _ ;; (14 keys)
   _        _      @ch_w  @ch_e  @ch_r  _      _      @ch_u  @ch_i  @ch_o  _      _      _      _ ;; (14 keys)
   @capskey @mt_a  _      _      @ch_f  @ch_g  @ch_h  @ch_j  _      _      @mt_;  _      _ ;; (13 keys)
-  @sftkey  _      @ch_x  @ch_c  @ch_v  @ch_b  _      _      _      _      _      _ ;; (12 keys)
+  @sftkey  _      @ch_x  @ch_c  @ch_v  @ch_b  @lt_n  @lt_m  _      _      _      _ ;; (12 keys)
+  _        _      _                    _                    _      _      _ ;; (7 keys)
+)
+
+(deflayer __fn1 ;;hmr_num, shifted_keys
+  _        F1     F2     F3     F4     F5     F6     F7     F8     F9     F10    F11    F12    _ ;; (14 keys)
+  S-grv    S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    S--    S-=    _ ;; (14 keys)
+  grv      1      2      3      4      5      6      7      8      9      0      -      = ;; (13 keys)
+  _        _      _      _      _      _      _      _      _      _      _      _ ;; (12 keys)
+  _        _      _                    _                    _      _      _ ;; (7 keys)
+)
+
+(deflayer __fn2 ;; forgiving_vim_nav,
+  _        F13    F14    F15    F16    F17    F18    F19    F20    F21    F22    F23    F24    _ ;; (14 keys)
+  _        _      _      _      _      _      _      up     _      _      _      _      _      _ ;; (14 keys)
+  _        _      lalt   lsft   lctrl  lsft   left   down   up     right  _      _      _ ;; (13 keys)
+  _        _      _      _      _      _      _      _      down   _      _      _ ;; (12 keys)
   _        _      _                    _                    _      _      _ ;; (7 keys)
 )
 
