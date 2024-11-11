@@ -3,14 +3,14 @@
 )
 
 (defvar
-  tap-time 150
+  tap-time 179
   hold-time 200
   in-chord-time 100
 )
 
 (defalias
   escctrl (tap-hold 100 100 esc lctrl)
-  mt_a (tap-hold $tap-time $hold-time a lmet)
+  mt_a (tap-hold 300 $hold-time a lmet)
   mt_w (tap-hold $tap-time $hold-time w lalt)
   mt_e (tap-hold $tap-time $hold-time e lsft)
   mt_f (tap-hold $tap-time $hold-time f lctl)
@@ -19,7 +19,7 @@
   mt_j (tap-hold $tap-time $hold-time j rctl)
   mt_i (tap-hold $tap-time $hold-time i rsft)
   mt_o (tap-hold $tap-time $hold-time o ralt)
-  mt_; (tap-hold $tap-time $hold-time ; rmet)
+  mt_; (tap-hold 300 $hold-time ; rmet)
 
   s_fn1 (layer-while-held __fn1)
   s_fn2 (layer-while-held __fn2)
